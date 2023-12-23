@@ -2,19 +2,22 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeModule } from './home/home.module';
 import { LayoutsModule } from './layouts/layouts.module';
+import { LoginModule } from './login/login.module';
 
 
 
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule,
+    CommonModule ,
     HomeModule,
-    LayoutsModule
+    LayoutsModule,
+    LoginModule
   ],
   exports:[
     HomeModule,
-    LayoutsModule
+    LayoutsModule,
+    LoginModule
   ]
 })
 export class AdminModule { }

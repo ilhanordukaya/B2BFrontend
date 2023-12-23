@@ -229,6 +229,50 @@ _pkginfo.txt
 # but keep track of directories ending in .cache
 !?*.[Cc]ache/
 
+# Node.js
+node_modules/
+
+# Derleme sonuçları
+dist/
+
+# Angular cache
+*.log
+*.log.*
+*.pid
+*.seed
+*.pid.lock
+*.log
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+pnp.js
+.pnp.js
+*.pnp.js
+*.pnp.js.shadow
+.vscode-test
+yarn.lock
+yarn-error.log
+
+# Miscellaneous
+/.angular/cache
+/.firebase/
+.sass-cache/
+/connect.lock
+/coverage
+/libpeerconnection.log
+firebase-debug.log
+testem.log
+/typings
+
+# Angular testing
+/coverage/
+/e2e/*.log
+/e2e/*.json
+/e2e/*.png
+/e2e/*.xml
+/e2e/screenshots/
+/e2e/videos/
+
 # Others
 ClientBin/
 ~$*

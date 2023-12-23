@@ -4,6 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AdminModule } from './admin/admin.module';
+import {HttpClientModule} from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -12,9 +14,15 @@ import { AdminModule } from './admin/admin.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AdminModule
+    AdminModule,
+    HttpClientModule,
+    BrowserModule,
+    ToastrModule.forRoot({
+      closeButton: true,
+      progressBar: true
+    })
   ],
-  providers: [],
+  providers: [ { provide: 'apiUrl', useValue:'https://localhost:7146/api/'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
