@@ -4,6 +4,7 @@ import { LayoutsComponent } from './admin/layouts/layouts.component';
 import { HomeComponent } from './admin/home/home.component';
 import { LoginComponent } from './admin/login/login.component';
 import { AuthGuard } from './admin/login/guard/auth.guard';
+import { ProductsComponent } from './admin/products/products.component';
 
 const routes: Routes = [
   {
@@ -21,12 +22,26 @@ const routes: Routes = [
         path:'',
         component:HomeComponent,
         loadChildren:()=>import('./admin/home/home.module').then(m=>m.HomeModule)
+        
+      },
+      {
+        path:'products',
+        component:ProductsComponent,
+        loadChildren:()=>import('./admin/products/products.module').then(m=>m.ProductsModule)
+        
       }
+
+      
+
+
+
             ]
   }
 
 
 ];
+
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

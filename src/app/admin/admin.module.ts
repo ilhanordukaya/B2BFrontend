@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HomeModule } from './home/home.module';
 import { LayoutsModule } from './layouts/layouts.module';
 import { LoginModule } from './login/login.module';
+import { ProductsModule } from './products/products.module';
 
 
 
@@ -12,7 +13,8 @@ import { LoginModule } from './login/login.module';
     CommonModule ,
     HomeModule,
     LayoutsModule,
-    LoginModule
+    LoginModule,
+    ProductsModule
   ],
   exports:[
     HomeModule,
