@@ -4,6 +4,7 @@ import { HomeModule } from './home/home.module';
 import { LayoutsModule } from './layouts/layouts.module';
 import { LoginModule } from './login/login.module';
 import { ProductsModule } from './products/products.module';
+import { PriceListModule } from './price-list/price-list.module';
 
 
 
@@ -14,12 +15,15 @@ import { ProductsModule } from './products/products.module';
     HomeModule,
     LayoutsModule,
     LoginModule,
-    ProductsModule
+    ProductsModule,
+    PriceListModule
   ],
   exports:[
     HomeModule,
     LayoutsModule,
-    LoginModule
+    LoginModule,
+    ProductsModule,
+    PriceListModule
   ]
 })
 export class AdminModule { }

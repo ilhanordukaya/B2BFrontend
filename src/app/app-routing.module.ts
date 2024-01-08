@@ -5,6 +5,9 @@ import { HomeComponent } from './admin/home/home.component';
 import { LoginComponent } from './admin/login/login.component';
 import { AuthGuard } from './admin/login/guard/auth.guard';
 import { ProductsComponent } from './admin/products/products.component';
+import { ProductImagesComponent } from './admin/products/product-images/product-images.component';
+import { PriceListComponent } from './admin/price-list/price-list.component';
+import { PriceListDetailComponent } from './admin/price-list/price-list-detail/price-list-detail.component';
 
 const routes: Routes = [
   {
@@ -26,19 +29,41 @@ const routes: Routes = [
       },
       {
         path:'products',
-        component:ProductsComponent,
-        loadChildren:()=>import('./admin/products/products.module').then(m=>m.ProductsModule)
-        
-      }
+        children:[
 
-      
+          {
+            path:'',
+            component:ProductsComponent,
+            loadChildren:()=>import('./admin/products/products.module').then(m=>m.ProductsModule)
+          },
+          {
+            path: ':id/images',
+            component: ProductImagesComponent,
+            loadChildren: ()=> import('./admin/products/product-images/product-images.module').then(m=> m.ProductImagesModule)
+          }
+        ]
+            
+      },
+      {
+        path: 'price-lists',
+        children: [
+          {
+            path: '',
+            component: PriceListComponent,
+            loadChildren: ()=> import('./admin/price-list/price-list.module').then(m=> m.PriceListModule)
+          }
+          ,
+          {
+            path: ':id',
+            component: PriceListDetailComponent,
+            loadChildren: ()=> import('./admin/price-list/price-list-detail/price-list-detail.module').then(m=> m.PriceListDetailModule)
+          }
+        ]
+      },
 
 
-
-            ]
+     ]
   }
-
-
 ];
 
 
