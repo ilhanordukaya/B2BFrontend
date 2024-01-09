@@ -1,22 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PriceListDetailComponent } from './price-list-detail.component';
-import { PriceListDetailPipe } from './pipe/price-list-detail.pipe';
+import { CustomersComponent } from './customers.component';
+import { RouterModule, Routes } from '@angular/router';
+import { CustomerPipe } from './pipe/customer.pipe';
 import { FormsModule } from '@angular/forms';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
-import { RouterModule, Routes } from '@angular/router';
 
 const routes:Routes=[
   {
     path:'',
-    component:PriceListDetailComponent
+    component:CustomersComponent
   }
 ]
 
 @NgModule({
   declarations: [
-    PriceListDetailComponent,
-    PriceListDetailPipe
+    CustomersComponent,
+    CustomerPipe
   ],
   imports: [
     CommonModule,
@@ -25,7 +25,7 @@ const routes:Routes=[
     RouterModule.forChild(routes)
   ],
   exports:[
-    PriceListDetailComponent
+    CustomersComponent
   ]
 })
-export class PriceListDetailModule { }
+export class CustomersModule { }

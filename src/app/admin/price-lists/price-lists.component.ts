@@ -1,21 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { PriceListModel } from './model/price-list-model';
 import { PriceListService } from './service/price-list.service';
 import { ErrorService } from 'src/app/services/error.service';
 import { ToastrService } from 'ngx-toastr';
 import { HelperService } from 'src/app/services/helper.service';
+import { PriceListModel } from './model/price-list-model';
 import { NgForm } from '@angular/forms';
 
 @Component({
-  selector: 'app-price-list',
-  templateUrl: './price-list.component.html',
-  styleUrls: ['./price-list.component.scss']
+  selector: 'app-price-lists',
+  templateUrl: './price-lists.component.html',
+  styleUrls: ['./price-lists.component.scss']
 })
-export class PriceListComponent implements OnInit {
+export class PriceListsComponent implements OnInit {
 
+  priceLists: PriceListModel[] = [];
+  priceList: PriceListModel = new PriceListModel();
 
-  priceLists:PriceListModel[] = [];
-  priceList:PriceListModel=new PriceListModel();
+  filterText: string = "";
 
   constructor(
     private priceListService: PriceListService,

@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductModel } from '../../products/model/product-model';
-import { PriceListDetailModel } from './model/price-list-detail-model';
 import { PriceListDetailService } from './service/price-list-detail.service';
 import { ErrorService } from 'src/app/services/error.service';
 import { ToastrService } from 'ngx-toastr';
 import { HelperService } from 'src/app/services/helper.service';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from '../../products/service/product.service';
+import { ProductModel } from '../../products/model/product-model';
+import { PriceListDetailModel } from './model/price-list-detail-model';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -23,6 +23,7 @@ export class PriceListDetailComponent implements OnInit {
   filterText: string = "";
 
   priceListId: number = 0;
+
   constructor(
     private priceListDetailService: PriceListDetailService,
     private errorService: ErrorService,
@@ -38,7 +39,6 @@ export class PriceListDetailComponent implements OnInit {
       this.getList();
       this.getProductList();
     })
-    
   }
 
   exportExcel(){
@@ -97,6 +97,5 @@ export class PriceListDetailComponent implements OnInit {
       this.errorService.errorHandler(err);
     });
   }
-
 
 }

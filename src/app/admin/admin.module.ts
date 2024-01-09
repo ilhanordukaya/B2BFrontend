@@ -4,7 +4,9 @@ import { HomeModule } from './home/home.module';
 import { LayoutsModule } from './layouts/layouts.module';
 import { LoginModule } from './login/login.module';
 import { ProductsModule } from './products/products.module';
-import { PriceListModule } from './price-list/price-list.module';
+import { CustomersModule } from './customers/customers.module';
+import { PriceListsModule } from './price-lists/price-lists.module';
+
 
 
 
@@ -16,14 +18,16 @@ import { PriceListModule } from './price-list/price-list.module';
     LayoutsModule,
     LoginModule,
     ProductsModule,
-    PriceListModule
+    PriceListsModule,
+    CustomersModule
   ],
   exports:[
     HomeModule,
     LayoutsModule,
     LoginModule,
     ProductsModule,
-    PriceListModule
+    PriceListsModule,
+    CustomersModule
   ]
 })
 export class AdminModule { }
