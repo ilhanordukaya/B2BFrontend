@@ -9,6 +9,8 @@ import { ProductImagesComponent } from './admin/products/product-images/product-
 import { PriceListsComponent } from './admin/price-lists/price-lists.component';
 import { PriceListDetailComponent } from './admin/price-lists/price-list-detail/price-list-detail.component';
 import { CustomersComponent } from './admin/customers/customers.component';
+import { OrdersComponent } from './admin/orders/orders.component';
+import { OrderDetailComponent } from './admin/orders/order-detail/order-detail.component';
 
 const routes: Routes = [
   {
@@ -23,10 +25,19 @@ const routes: Routes = [
     canActivateChild:[AuthGuard],
     children:[
       {
-        path:'',
-        component:HomeComponent,
-        loadChildren:()=>import('./admin/home/home.module').then(m=>m.HomeModule)
-        
+        path: '',
+        children: [
+          {
+            path: '',
+            component: OrdersComponent,
+            loadChildren: ()=> import('./admin/orders/orders.module').then(m=> m.OrdersModule)
+          },
+          {
+            path: 'order-detail/:id',
+            component: OrderDetailComponent,
+            loadChildren: ()=> import('./admin/orders/order-detail/order-detail.module').then(m=> m.OrderDetailModule)
+          }
+        ]
       },
       {
         path:'products',
