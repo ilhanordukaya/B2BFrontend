@@ -7,6 +7,7 @@ import { ProductsModule } from './products/products.module';
 import { CustomersModule } from './customers/customers.module';
 import { PriceListsModule } from './price-lists/price-lists.module';
 import { OrdersModule } from './orders/orders.module';
+import { ProfileModule } from './profile/profile.module';
 
 
 
@@ -21,7 +22,8 @@ import { OrdersModule } from './orders/orders.module';
     ProductsModule,
     PriceListsModule,
     CustomersModule,
-    OrdersModule
+    OrdersModule,
+    ProfileModule
   ],
   exports:[
     HomeModule,
@@ -30,7 +32,8 @@ import { OrdersModule } from './orders/orders.module';
     ProductsModule,
     PriceListsModule,
     CustomersModule,
-    OrdersModule
+    OrdersModule,
+    ProfileModule
   ]
 })
 export class AdminModule { }
